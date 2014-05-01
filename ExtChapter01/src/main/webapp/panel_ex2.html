@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link href="extjs/resources/css/ext-all.css" rel="stylesheet" type="text/css" />
+<script src="extjs/ext-all.js" type="text/javascript"></script>
+<title>Showing panel</title>
+</head>
+<body>
+<script type="text/javascript">
+Ext.create("Ext.Panel",{
+	title : "Hello World Panel",
+	items : [
+	Ext.create("Ext.form.field.Text",{
+	fieldLabel : "Name",
+	id:"nameText"
+	}),
+	Ext.create("Ext.Button",{
+		text : "Click",
+		handler : function(){
+			Ext.Msg.alert(Ext.getCmp("nameText").getValue());
+		}
+		})
+	],
+	renderTo : Ext.getBody()
+	});
+
+</script>
+</body>
+</html>
